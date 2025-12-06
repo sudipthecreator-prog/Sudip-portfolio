@@ -5,41 +5,63 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Sudip Ghosh — MIS & Accounts Professional</title>
   <meta name="description" content="Professional portfolio of Sudip Ghosh — MIS & Accounts Executive from Dhanbad." />
+
+  <!-- Aptos Font (system-based) -->
   <style>
-    :root{
-      --beige-1:#f5e6d3; --beige-2:#f7ecdf; --beige-3:#fcf7f1;
-      --card:#ffffffcc; --muted:#687076; --accent:#b7832f;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    @font-face {
+      font-family: 'Aptos';
+      src: local('Aptos'), local('Aptos Display');
     }
 
-    html,body{height:100%;margin:0;background:linear-gradient(135deg,var(--beige-1),var(--beige-2),var(--beige-3));color:#1f2937}
-    .container{max-width:1100px;margin:36px auto;padding:28px}
+    :root{
+      --bg1:#f5e6d3; --bg2:#f7ecdf; --bg3:#fcf7f1;
+      --card:#ffffffee; --muted:#667085; --accent:#b7832f; --accent-2:#a56d22;
+      --glass: rgba(255,255,255,0.6);
+      font-family: 'Aptos', 'Segoe UI', system-ui, -apple-system, Roboto, Arial;
+    }
+
+    html,body{height:100%;margin:0;background:linear-gradient(135deg,var(--bg1),var(--bg2),var(--bg3));color:#0f172a;-webkit-font-smoothing:antialiased}
+    .container{max-width:1100px;margin:40px auto;padding:28px}
+
+    /* Layout */
     .wrap{display:grid;grid-template-columns: 320px 1fr;gap:28px;align-items:start}
 
-    /* Left card */
-    .card-left{background:var(--card);backdrop-filter:blur(6px);border-radius:18px;padding:26px;border:1px solid rgba(255,255,255,0.6);box-shadow:0 8px 30px rgba(20,20,20,0.06)}
-    .avatar{width:140px;height:140px;border-radius:50%;background:#f3f3f3;display:flex;align-items:center;justify-content:center;margin:0 auto 14px;box-shadow:inset 0 1px 0 rgba(255,255,255,0.6)}
-    .name{font-size:20px;font-weight:700;text-align:center;margin:6px 0}
-    .title{font-size:13px;color:var(--muted);text-align:center}
-    .info{margin-top:18px;font-size:14px;color:#374151}
+    /* Left card (glass + accent bar) */
+    .card-left{position:relative;background:var(--card);backdrop-filter:blur(6px);border-radius:16px;padding:26px;border:1px solid rgba(0,0,0,0.04);box-shadow:0 12px 40px rgba(17,24,39,0.08);overflow:hidden}
+    .accent-bar{position:absolute;left:0;top:0;bottom:0;width:6px;background:linear-gradient(180deg,var(--accent),var(--accent-2));border-top-left-radius:16px;border-bottom-left-radius:16px}
+
+    .avatar{width:142px;height:142px;border-radius:50%;background:#f3f3f3;display:block;margin:6px auto 12px;overflow:hidden;border:6px solid rgba(255,255,255,0.6);box-shadow:0 8px 30px rgba(16,24,40,0.12)}
+    .avatar img{width:100%;height:100%;object-fit:cover;display:block}
+
+    .name{font-size:20px;font-weight:700;text-align:center;margin:12px 0 6px;color:#0f172a}
+    .title{font-size:13px;color:var(--muted);text-align:center;margin-bottom:8px}
+
+    .info{margin-top:12px;font-size:14px;color:#263238}
     .info p{margin:8px 0}
     .muted{color:var(--muted);font-size:13px}
-    .email-btn{display:inline-block;margin-top:12px;padding:9px 14px;border-radius:8px;background:#fff6e8;color:var(--accent);border:1px solid rgba(183,131,47,0.12);text-decoration:none;font-weight:600}
+
+    .email-btn{display:inline-block;margin-top:12px;padding:10px 14px;border-radius:10px;background:#fff6e8;color:var(--accent);border:1px solid rgba(183,131,47,0.12);text-decoration:none;font-weight:700}
 
     /* Right content */
-    .card-right > section{background:#fff;border-radius:12px;padding:18px;margin-bottom:16px;border:1px solid rgba(0,0,0,0.04);box-shadow:0 2px 6px rgba(10,10,10,0.03)}
-    h1{margin:0;font-size:28px}
-    .topbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
+    .card-right > section{background:#fff;border-radius:12px;padding:20px;margin-bottom:16px;border:1px solid rgba(15,23,42,0.04);box-shadow:0 6px 18px rgba(15,23,42,0.04)}
+    h1{margin:0;font-size:28px;font-family:'Aptos','Segoe UI',sans-serif}
+    .topbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
     .copy{background:#fff;border:1px solid rgba(0,0,0,0.06);padding:8px 12px;border-radius:8px;cursor:pointer}
 
+    .meta{color:var(--muted);font-size:14px}
     ul{margin:8px 0 0 18px}
     .skills{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
-    .chip{background:#f3f4f6;padding:6px 10px;border-radius:999px;font-size:13px}
+    .chip{background:#f8fafb;padding:6px 10px;border-radius:999px;font-size:13px;color:#0f172a;border:1px solid rgba(15,23,42,0.04)}
 
     footer{margin-top:20px;text-align:center;color:var(--muted);font-size:13px}
 
-    /* Responsive */
-    @media (max-width:900px){.wrap{grid-template-columns:1fr;}.avatar{width:120px;height:120px}}
+    .section-title{display:flex;justify-content:space-between;align-items:center}
+    .section-title h3{margin:0;font-family:'Aptos','Segoe UI',sans-serif}
+
+    .company{font-weight:600;color:#0f172a}
+    .period{color:var(--muted);font-size:13px}
+
+    @media (max-width:920px){.wrap{grid-template-columns:1fr}.avatar{width:120px;height:120px}}
   </style>
 </head>
 <body>
@@ -47,68 +69,111 @@
     <div class="topbar">
       <div>
         <h1>Sudip Ghosh</h1>
-        <div class="muted">MIS & Accounts Professional — H.N Colony, Barmasia, Dhanbad</div>
+        <div class="meta">MIS & Accounts Professional • H.N Colony, Barmasia, Dhanbad</div>
       </div>
       <div style="display:flex;gap:10px;align-items:center">
         <button class="copy" onclick="navigator.clipboard.writeText('sudipghosh8797@gmail.com').then(()=>alert('Email copied'))">Copy Email</button>
         <button class="copy" onclick="window.print()">Print / Save PDF</button>
+        <button class="copy" onclick="window.print()" style="background:#fff6e8;color:#b7832f;font-weight:600">Download PDF</button>
       </div>
     </div>
 
     <div class="wrap">
-      <aside class="card-left">
+      <aside class="card-left" aria-label="Personal card">
+        <div class="accent-bar" aria-hidden="true"></div>
+
         <div class="avatar" aria-hidden="true">
-          <!-- No photo added as requested -->
-          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#b7832f" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4.5c1.657 0 3 1.343 3 3s-1.343 3-3 3-3-1.343-3-3 1.343-3 3-3z"></path><path d="M6 20.25a6 6 0 0112 0"></path></svg>
+          <img src="https://drive.google.com/uc?export=download&id=1GjRcUn1I4AsNSuZHdgz1v7BYFgh_nADC" alt="Sudip Ghosh">
         </div>
 
         <div class="name">SUDIP GHOSH</div>
         <div class="title">MIS & Accounts Professional</div>
 
         <div class="info">
-          <p><strong>Contact</strong><br><span class="muted">sudipghosh8797@gmail.com</span></p>
-          <p><strong>Address</strong><br><span class="muted">H.N Colony, Barmasia, Dhanbad, Jharkhand – 826001</span></p>
-          <p><strong>Languages</strong><br><span class="muted">Hindi, Bengali, English</span></p>
-          <p><strong>DOB</strong><br><span class="muted">13 July 1994</span></p>
+          <p><strong>Contact</strong><br>
+  <span style="display:flex;align-items:center;gap:6px" class="muted">
+    <svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none' stroke='#b7832f' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'><path d='M4 4h12v12H4z'/><path d='M4 4l8 6 8-6'/></svg>
+    <a href="mailto:sudipghosh8797@gmail.com" class="muted">sudipghosh8797@gmail.com</a>
+  </span>
+</p>
+          <p><strong>Address</strong><br>
+  <span style="display:flex;align-items:center;gap:6px" class="muted">
+    <svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none' stroke='#b7832f' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'><path d='M12 2a6 6 0 016 6c0 4-6 10-6 10S6 12 6 8a6 6 0 016-6z'/><circle cx='12' cy='8' r='2'/></svg>
+    H.N Colony, Barmasia, Dhanbad, Jharkhand – 826001
+  </span>
+</p>
+          <p><strong>Languages</strong><br>
+  <span style="display:flex;align-items:center;gap:6px" class="muted">
+    <svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none' stroke='#b7832f' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'><path d='M5 3h14l-5 9h-4l-5-9z'/><path d='M12 12v7'/></svg>
+    Hindi, Bengali, English
+  </span>
+</p>
+          <p><strong>DOB</strong><br>
+  <span style="display:flex;align-items:center;gap:6px" class="muted">
+    <svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none' stroke='#b7832f' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'><rect x='3' y='4' width='18' height='18' rx='2'/><path d='M16 2v4M8 2v4M3 10h18'/></svg>
+    13 July 1994
+  </span>
+</p>
+
           <a class="email-btn" href="mailto:sudipghosh8797@gmail.com">Email</a>
         </div>
       </aside>
 
       <main class="card-right">
         <section>
-          <h3>Professional Summary</h3>
-          <p style="margin-top:8px;color:#374151">Result-oriented MIS & Accounts professional with extensive experience in reporting, automation, cash handling and team coordination. Skilled at turning raw data into actionable insights to improve operations and collections.</p>
+          <div class="section-title"><h3>Professional Summary</h3></div>
+          <p style="margin-top:8px;color:#263238">
+            Results-driven MIS & Accounts Professional with comprehensive experience in reporting, financial reconciliation,
+            sales analytics, dashboard creation, automation, and data accuracy management. Skilled in leveraging Excel,
+            Google Sheets, and MIS tools to optimize workflows, reduce manual effort, and improve operational efficiency.
+            Demonstrated success in collaborating with cross‑functional teams, managing daily MIS activities, and supporting
+            senior management with actionable insights.
+            <br><br>
+            With a strong foundation in data analysis, process improvement, and business operations, I specialize in
+            transforming raw datasets into meaningful reports aligned with business KPIs. Known for adaptability, problem‑
+            solving ability, and consistency in meeting deadlines under pressure. Adept in handling accounts, cashflow,
+            inventory coordination, and team supervision gained over 10+ years of diversified experience.
+            <br><br>
+            Actively building a professional presence on LinkedIn and open to opportunities where I can apply my reporting,
+            analytical, and operational strengths to contribute to long‑term organizational growth.
+            <br><br>
+            <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/sudip-ghosh-b256a916a/" target="_blank" style="color:#b7832f;font-weight:600">Visit Profile</a>
+          </p>
         </section>
 
         <section>
-          <h3>Experience</h3>
+          <div class="section-title"><h3>Experience</h3></div>
           <div style="margin-top:8px">
-            <strong>Neyah Wellness</strong> <span class="muted">— MIS (Management Information System) • 2024 – Present</span>
-            <ul>
-              <li>Maintaining daily MIS dashboards and KPI reports</li>
-              <li>Automated reporting with Google Sheets and Excel</li>
-              <li>Sales & collection analysis for management</li>
-            </ul>
+            <div style="margin-bottom:12px">
+              <div class="company">Neyah Wellness <span class="period">• MIS Executive • 2024 – Present</span></div>
+              <ul>
+                <li>Maintaining daily MIS dashboards and KPI reports</li>
+                <li>Automated reporting with Google Sheets and Excel</li>
+                <li>Sales & collection analysis for management</li>
+              </ul>
+            </div>
 
-            <strong style="display:block;margin-top:10px">Shankar Mall</strong> <span class="muted">— Department Incharge / Accounts Executive / Cashier • 2015 – 2024</span>
-            <ul>
-              <li>Managed cash operations, billing & reconciliations</li>
-              <li>Prepared daily sales & inventory reports</li>
-              <li>Led store staff and improved process efficiency</li>
-            </ul>
+            <div style="margin-bottom:12px">
+              <div class="company">Shankar Mall <span class="period">• Department Incharge / Accounts Executive / Cashier • 2015 – 2024</span></div>
+              <ul>
+                <li>Managed cash operations, billing & reconciliations</li>
+                <li>Prepared daily sales & inventory reports</li>
+                <li>Led store staff and improved process efficiency</li>
+              </ul>
+            </div>
 
-            <strong style="display:block;margin-top:10px">Bridge & Roof Co. (India) Ltd.</strong> <span class="muted">— Site Supervisor • 2012 – 2014</span>
-            <ul>
-              <li>Supervised site activities and manpower</li>
-              <li>Coordinated material movement and daily progress reports</li>
-            </ul>
+            <div style="margin-bottom:12px">
+              <div class="company">Bridge & Roof Co. (India) Ltd. <span class="period">• Site Supervisor • 2012 – 2014</span></div>
+              <ul>
+                <li>Supervised site activities and manpower</li>
+                <li>Coordinated material movement and daily progress reports</li>
+              </ul>
+            </div>
           </div>
         </section>
 
         <section>
-          <div style="display:flex;justify-content:space-between;align-items:center">
-            <h3>Education</h3>
-          </div>
+          <div class="section-title"><h3>Education</h3></div>
           <ul style="margin-top:8px">
             <li>Matric (10th) — Pranjivan Academy, JAC Board (2010)</li>
             <li>Intermediate (12th) — RSP College (2012)</li>
@@ -117,9 +182,7 @@
         </section>
 
         <section>
-          <div style="display:flex;justify-content:space-between;align-items:center">
-            <h3>Skills & Tools</h3>
-          </div>
+          <div class="section-title"><h3>Skills & Tools</h3></div>
           <div class="skills">
             <div class="chip">MIS Reporting</div>
             <div class="chip">Excel (VLOOKUP, Pivot)</div>
@@ -128,14 +191,13 @@
             <div class="chip">Billing & Cash Handling</div>
             <div class="chip">Team Coordination</div>
           </div>
-
           <div style="margin-top:12px;color:var(--muted)"><strong>Tools:</strong> Excel, Google Sheets, Tally ERP, PowerPoint, Basic SQL</div>
         </section>
 
         <section>
-          <h3>Declaration</h3>
-          <p style="margin-top:8px;color:#374151">I hereby declare that the above information is true to the best of my knowledge.</p>
-          <p style="margin-top:10px;color:#374151"><strong>Place:</strong> Dhanbad &nbsp;&nbsp; <strong>Date:</strong> <!-- will show user's browser date on print --> <script>document.write(new Date().toLocaleDateString())</script></p>
+          <div class="section-title"><h3>Declaration</h3></div>
+          <p style="margin-top:8px;color:#263238">I hereby declare that the above information is true to the best of my knowledge.</p>
+          <p style="margin-top:10px;color:#263238"><strong>Place:</strong> Dhanbad &nbsp;&nbsp; <strong>Date:</strong> <script>document.write(new Date().toLocaleDateString())</script></p>
         </section>
 
       </main>
