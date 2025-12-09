@@ -45,6 +45,12 @@
     .resume-container{width:100%;max-width:100%;margin:0;padding:0;box-shadow:none;border-radius:0}
     .content{grid-template-columns:1fr 260px;gap:10px;padding:10px}
     .header{padding:14px;margin:0;width:100%}
+    .download-btn{display:none !important}
+  }
+    body{background:#fff!important}
+    .resume-container{width:100%;max-width:100%;margin:0;padding:0;box-shadow:none;border-radius:0}
+    .content{grid-template-columns:1fr 260px;gap:10px;padding:10px}
+    .header{padding:14px;margin:0;width:100%}
   }
 </style>
 </head>
@@ -57,7 +63,7 @@
     <div class="header-row">
 
       <!-- DOWNLOAD PDF BUTTON -->
-      <button onclick="window.print()" style="background:#fff;color:var(--blue);padding:8px 14px;border-radius:8px;border:none;font-weight:700;cursor:pointer;align-self:flex-end;margin-bottom:10px;">
+      <button id="downloadBtn" class="download-btn" onclick="window.print()" style="background:#fff;color:var(--blue);padding:8px 14px;border-radius:8px;border:none;font-weight:700;cursor:pointer;align-self:flex-end;margin-bottom:10px;">
         📄 Download PDF
       </button>
 
