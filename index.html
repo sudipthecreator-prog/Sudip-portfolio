@@ -8,7 +8,15 @@
   :root{--blue:#0a66c2;--muted:#556;--card:#fff}
   *{box-sizing:border-box}
   body{margin:0;font-family:Inter, Arial, sans-serif;background:#f3f2ef;color:#222}
-  .resume-container{max-width:900px;margin:0 auto;background:var(--card);border-radius:10px;overflow:hidden;box-shadow:0 6px 30px rgba(0,0,0,0.08)}
+  .resume-container{
+  width:100%;
+  max-width:210mm; /* A4 width */
+  margin:0 auto;
+  background:var(--card);
+  border-radius:10px;
+  overflow:hidden;
+  box-shadow:0 6px 30px rgba(0,0,0,0.08);
+}
 
   /* FULL BLUE HEADER */
   .header{background:linear-gradient(135deg,#0a66c2,#004a99,#0d89e3);color:#fff;padding:26px;width:100%;margin:0;border-radius:0;box-sizing:border-box;}
@@ -33,7 +41,17 @@
 
   /* MOBILE VIEW */
   @media(max-width:880px){
-    .content{grid-template-columns:1fr;padding:18px}
+  body{padding:0;margin:0;}
+  .resume-container{
+    width:100%;
+    max-width:100%;
+    margin:0;
+    border-radius:0;
+    box-shadow:none;
+  }
+  .content{grid-template-columns:1fr;padding:16px}
+  h1{font-size:22px}
+}
     .resume-container{margin:12px}
     h1{font-size:22px}
   }
