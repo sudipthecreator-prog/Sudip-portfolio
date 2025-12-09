@@ -6,6 +6,7 @@
 <title>Sudip Ghosh – Professional Resume</title>
 <style>
   :root{--blue:#0a66c2;--muted:#556;--card:#fff}
+  *{box-sizing:border-box}
   body{margin:0;font-family:Inter, Arial, sans-serif;background:#f3f2ef;color:#222}
   .resume-container{max-width:900px;margin:24px auto;background:var(--card);border-radius:10px;overflow:hidden;box-shadow:0 6px 30px rgba(0,0,0,0.08)}
   .header{background:linear-gradient(90deg,var(--blue),#075aa3);color:#fff;padding:26px}
@@ -14,7 +15,6 @@
   .download-btn span{color:var(--blue)}
   .header-row{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
   .print-note{display:none}
-  .header-row{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
   .title{flex:1}
   h1{margin:0;font-size:28px;letter-spacing:0.4px}
   .sub{margin-top:6px;font-size:15px;opacity:0.95}
@@ -27,7 +27,25 @@
   .muted{color:var(--muted);font-size:14px}
   .label{font-weight:700;color:#333}
   .small{font-size:14px;color:var(--muted)}
-  @media (max-width:880px){.content{grid-template-columns:1fr;}h1{font-size:22px}}
+
+  /* small screens - mobile friendly */
+  @media (max-width:880px){
+    .resume-container{margin:12px}
+    .header{padding:16px}
+    .header-row{align-items:center}
+    .title{flex:1 1 100%}
+    h1{font-size:20px}
+    .sub{font-size:13px}
+    .download-btn{margin-left:0;margin-top:8px}
+    .content{grid-template-columns:1fr;gap:16px;padding:18px}
+    main{order:1}
+    .sidebar{order:2}
+    .sidebar{padding:14px}
+    .download-btn{margin-left:auto}
+    .download-btn{flex-shrink:0}
+    .download-btn span{font-weight:700}
+  }
+
   /* A4 Printable Layout */
   @media print{
     @page { size: A4; margin: 10mm; }
@@ -37,17 +55,6 @@
     .header{padding:14px;}
     .download-btn{display:none !important}
     .print-note{display:block !important;color:#222}
-  }
-    .resume-container{max-width:100%;margin:0;box-shadow:none;border-radius:0;}
-    .content{grid-template-columns:1fr 300px;gap:16px;padding:20px;}
-    .header{padding:18px;}
-    /* hide interactive button in print, show print-note */
-    .download-btn{display:none !important}
-    .print-note{display:block !important;color:#222}
-  }
-    .resume-container{max-width:100%;margin:0;box-shadow:none;border-radius:0;}
-    .content{grid-template-columns:1fr 300px;gap:16px;padding:20px;}
-    .header{padding:18px;}
   }
 </style>
 </head>
