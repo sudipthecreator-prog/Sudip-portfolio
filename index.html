@@ -27,7 +27,6 @@
   .label{font-weight:700;color:#333}
   .small{font-size:14px;color:var(--muted)}
 
-  /* responsive */
   @media (max-width:880px){
     .content{grid-template-columns:1fr;}
     .header{padding:20px}
@@ -40,7 +39,6 @@
   <div class="resume-container">
     <div class="header">
       <div class="header-row">
-        
         <div class="title">
           <h1>Sudip Ghosh</h1>
           <div class="sub">MIS Executive • Data Reporting • Excel Automation</div>
@@ -139,7 +137,6 @@
   </div>
 
 <script>
-  // Download TXT
   document.getElementById('downloadTxt').addEventListener('click', function(){
     const text = `SUDIP GHOSH
 
@@ -163,16 +160,3 @@ EDUCATION
 Matric (10th) – Pranjivan Academy (2010); Intermediate (12th) – RSP College (2012); Tally Certification (2012)
 
 Declaration: I hereby declare that the above information is true to the best of my knowledge.`;
-    const blob = new Blob([text], {type:'text/plain'});
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a'); a.href = url; a.download = 'Sudip_Ghosh_CV.txt'; document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url);
-  });
-
-  // Print -> user can Save as PDF
-  document.getElementById('printPdf').addEventListener('click', function(){
-    window.print();
-  });
-</script>
-
-</body>
-</html>
