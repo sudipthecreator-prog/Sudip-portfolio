@@ -8,8 +8,8 @@
   :root{--blue:#0a66c2;--muted:#556;--card:#fff}
   *{box-sizing:border-box}
   body{margin:0;font-family:Inter, Arial, sans-serif;background:#f3f2ef;color:#222}
-  .resume-container{max-width:900px;margin:24px auto;background:var(--card);border-radius:10px;overflow:hidden;box-shadow:0 6px 30px rgba(0,0,0,0.08)}
-  .header{background:linear-gradient(90deg,var(--blue),#075aa3);color:#fff;padding:26px}
+  .resume-container{width:100%;max-width:100%;margin:0;background:var(--card);border-radius:0;overflow:hidden;box-shadow:none}
+  .header{background:linear-gradient(135deg,#0a66c2,#004a99,#0d89e3);color:#fff;padding:26px;width:100vw;margin-left:calc(50% - 50vw);}
   .download-btn{background:#fff;border:none;padding:8px 12px;border-radius:8px;cursor:pointer;display:inline-flex;align-items:center;gap:6px;margin-left:16px}
   .download-btn svg{color:var(--blue)}
   .download-btn span{color:var(--blue)}
@@ -61,12 +61,35 @@
 <body>
   <div class="resume-container">
     <div class="header">
-      <div class="header-row">
-        <div class="title">
-          <h1>Sudip Ghosh</h1>
-          <div class="sub">MIS Executive • Data Reporting • Excel Automation</div>
-          <div class="small" style="margin-top:6px;color:#ffffff">Dhanbad, Jharkhand • Languages: Hindi · Bengali · English</div>
-        </div>
+      <div class="header-row" style="flex-direction:column;align-items:flex-start;gap:10px;">
+
+  <h1 style="margin:0;font-size:30px;font-weight:800;letter-spacing:0.5px;color:#fff">SUDIP GHOSH</h1>
+
+  <div style="font-size:15px;color:#e8ecf5;font-weight:500;">
+    MIS Executive | Data Reporting | Excel Automation
+  </div>
+
+  <div style="display:flex;flex-wrap:wrap;gap:18px;margin-top:4px;font-size:14px;color:#f7f9fc;align-items:center;">
+
+    <span style="display:flex;align-items:center;gap:6px;">
+      <svg width="22" height="22" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 6-9 13-9 13S3 16 3 10a9 9 0 1 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      Dhanbad, Jharkhand
+    </span>
+
+    <span style="display:flex;align-items:center;gap:6px;">
+      <svg width="22" height="22" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92V21a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 3 5.18 2 2 0 0 1 5 3h4.09a1 1 0 0 1 1 .75 12.84 12.84 0 0 0 .57 1.81 1 1 0 0 1-.24 1.11L9 8a16 16 0 0 0 7 7l1.33-1.42a1 1 0 0 1 1.11-.24 12.84 12.84 0 0 0 1.81.57 1 1 0 0 1 .75 1V16.92z"/></svg>
+      8873018343
+    </span>
+
+    <span style="display:flex;align-items:center;gap:6px;">
+      <svg width="22" height="22" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><polyline points="22,6 12,13 2,6"/></svg>
+      sudip.ghosh8797@gmail.com
+    </span>
+
+</div>
+
+</div>
+</div>
 
         <button id="downloadBtn" class="download-btn" title="Download PDF (Save as PDF)">
           <!-- PDF icon -->
