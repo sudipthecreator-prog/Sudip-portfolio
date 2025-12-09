@@ -1,130 +1,177 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sudip Ghosh - Professional CV</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Sudip Ghosh – Professional Resume</title>
 <style>
-    body {
-        font-family: Arial, Helvetica, sans-serif;
-        background: #f4f6f9;
-        margin: 0;
-        padding: 0;
-        color: #333;
-    }
-    .container {
-        max-width: 900px;
-        margin: 40px auto;
-        background: #fff;
-        padding: 40px;
-        border-radius: 12px;
-        box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-    }
-    h1 {
-        font-size: 32px;
-        margin-bottom: 5px;
-        color: #2c3e50;
-    }
-    h2 {
-        font-size: 22px;
-        margin-top: 35px;
-        color: #2c3e50;
-        border-left: 5px solid #2c3e50;
-        padding-left: 10px;
-    }
-    p, li {
-        line-height: 1.6;
-        font-size: 16px;
-    }
-    ul { padding-left: 20px; }
-    .section { margin-bottom: 25px; }
-    .header-info {
-        font-size: 17px;
-        margin-bottom: 15px;
-    }
-    .label { font-weight: bold; }
+  :root{--blue:#0a66c2;--muted:#556;--card:#fff}
+  body{margin:0;font-family:Inter, Arial, sans-serif;background:#f3f2ef;color:#222}
+  .resume-container{max-width:900px;margin:24px auto;background:var(--card);border-radius:10px;overflow:hidden;box-shadow:0 6px 30px rgba(0,0,0,0.08)}
+  .header{background:linear-gradient(90deg,var(--blue),#075aa3);color:#fff;padding:26px}
+  .header-row{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+  .title{flex:1}
+  h1{margin:0;font-size:28px;letter-spacing:0.4px}
+  .sub{margin-top:6px;font-size:15px;opacity:0.95}
+  .actions{display:flex;gap:10px}
+  .btn{background:#fff;color:var(--blue);padding:8px 12px;border-radius:8px;text-decoration:none;font-weight:600;border:none;cursor:pointer}
+  .btn.ghost{background:transparent;color:#fff;border:1px solid rgba(255,255,255,0.18)}
+
+  .content{display:grid;grid-template-columns:1fr 320px;gap:24px;padding:26px}
+  .section{margin-bottom:10px}
+  h2{color:var(--blue);margin:0 0 10px 0;font-size:18px}
+  p,li{font-size:15px;line-height:1.6;color:#222}
+  ul{padding-left:18px;margin:6px 0}
+  .sidebar{background:#fbfdff;padding:16px;border-radius:8px;border:1px solid #eef3f8}
+  .muted{color:var(--muted);font-size:14px}
+  .label{font-weight:700;color:#333}
+  .small{font-size:14px;color:var(--muted)}
+
+  /* responsive */
+  @media (max-width:880px){
+    .content{grid-template-columns:1fr;}
+    .header{padding:20px}
+    h1{font-size:22px}
+    .actions{width:100%;justify-content:flex-start}
+  }
 </style>
 </head>
 <body>
+  <div class="resume-container">
+    <div class="header">
+      <div class="header-row">
+        <div class="title">
+          <h1>Sudip Ghosh</h1>
+          <div class="sub">MIS Executive • Data Reporting • Excel Automation</div>
+          <div class="small" style="margin-top:6px">Dhanbad, Jharkhand • Languages: Hindi · Bengali · English</div>
+        </div>
 
-<div class="container">
-
-    <h1>Sudip Ghosh</h1>
-    <p class="header-info">
-        <span class="label">Address:</span> H.N Colony, Barmasia, Dhanbad, Jharkhand – 826001<br>
-        <span class="label">Languages:</span> Hindi, Bengali, English<br>
-        <span class="label">Date of Birth:</span> 13-07-1994<br>
-        <span class="label">Marital Status:</span> Married<br>
-        <span class="label">Father’s Name:</span> Bivash Ghosh
-    </p>
-
-    <h2>Career Objective</h2>
-    <p>
-        Dedicated and result-oriented professional with strong experience in MIS, Accounts, Cash 
-        Management, and Team Coordination. Seeking an opportunity where my analytical and operational 
-        skills can contribute to organizational growth.
-    </p>
-
-    <h2>Educational Qualification</h2>
-    <ul>
-        <li><strong>Matric (10th)</strong> – JAC Board, Pranjivan Academy (2010)</li>
-        <li><strong>Intermediate (12th)</strong> – RSP College (2012)</li>
-        <li><strong>Tally Certification</strong> – Chaya Computer, Jharkhand (2012)</li>
-    </ul>
-
-    <h2>Work Experience</h2>
-
-    <div class="section">
-        <strong>1. Bridge & Roof Company (India) Limited</strong><br>
-        <em>Site Supervisor | 2012 – 2014</em>
-        <ul>
-            <li>Supervised on-site activities and manpower</li>
-            <li>Prepared daily progress reports</li>
-            <li>Coordinated material and workflow</li>
-        </ul>
+        <div class="actions">
+          <button class="btn" id="downloadTxt">Download TXT</button>
+          <button class="btn" id="printPdf">Download PDF</button>
+          <a class="btn ghost" href="#contact">Contact</a>
+        </div>
+      </div>
     </div>
 
-    <div class="section">
-        <strong>2. Shankar Mall</strong><br>
-        <em>Department Incharge / Accounts Executive / Cashier | 2015 – 2024</em>
-        <ul>
-            <li>Handled full department operations</li>
-            <li>Managed cash & billing systems</li>
-            <li>Prepared daily sales and accounts reports</li>
-            <li>Coordinated with staff and inventory</li>
-        </ul>
+    <div class="content">
+      <main>
+        <div class="section">
+          <h2>Career Objective</h2>
+          <p>Hardworking and dedicated professional with strong experience in MIS, Accounts, Cash Management, and Team Coordination. Seeking a responsible position where my skills can contribute to organizational growth.</p>
+        </div>
+
+        <div class="section">
+          <h2>Work Experience</h2>
+
+          <h3 style="margin:6px 0 4px 0">Neyah Wellness — MIS Executive <span class="small muted">(2024–Present)</span></h3>
+          <ul>
+            <li>Daily MIS reporting and dashboard maintenance</li>
+            <li>Sales & collection data analysis</li>
+            <li>Excel/Google Sheets automation</li>
+            <li>Coordination with field team and management</li>
+          </ul>
+
+          <h3 style="margin:12px 0 4px 0">Shankar Mall — Department Incharge / Accounts Executive / Cashier <span class="small muted">(2015–2024)</span></h3>
+          <ul>
+            <li>Handled department operations, cash & billing</li>
+            <li>Prepared daily sales and account reports</li>
+            <li>Inventory & staff coordination</li>
+          </ul>
+
+          <h3 style="margin:12px 0 4px 0">Bridge & Roof Company (India) Ltd. — Site Supervisor <span class="small muted">(2012–2014)</span></h3>
+          <ul>
+            <li>Supervised site activities and manpower</li>
+            <li>Prepared daily progress reports and coordinated materials</li>
+          </ul>
+        </div>
+
+        <div class="section">
+          <h2>Skills</h2>
+          <ul>
+            <li>MIS Reporting & Analysis</li>
+            <li>Excel (VLOOKUP, Pivot, Dashboards)</li>
+            <li>Google Sheets Automation</li>
+            <li>Tally ERP & Billing</li>
+            <li>Cash Handling & Team Coordination</li>
+          </ul>
+        </div>
+
+        <div class="section">
+          <h2>Education</h2>
+          <ul>
+            <li>Matric (10th) – Pranjivan Academy, JAC Board (2010)</li>
+            <li>Intermediate (12th) – RSP College (2012)</li>
+            <li>Tally Certification – Chaya Computer, Jharkhand (2012)</li>
+          </ul>
+        </div>
+
+        <div class="section" id="contact">
+          <h2>Declaration</h2>
+          <p>I hereby declare that the above information is true to the best of my knowledge.</p>
+          <p class="small">Place: Dhanbad &nbsp;&nbsp; Date: __________</p>
+        </div>
+      </main>
+
+      <aside class="sidebar">
+        <div class="section">
+          <div class="label">Personal Details</div>
+          <p class="muted small">Date of Birth: 13-07-1994<br>Marital Status: Married<br>Father's Name: Bivash Ghosh<br>Nationality: Indian</p>
+        </div>
+
+        <div class="section">
+          <div class="label">Contact</div>
+          <p class="muted small">Email: <a href="mailto:your-email@example.com">your-email@example.com</a><br>Phone: (add phone if you want)</p>
+        </div>
+
+        <div class="section">
+          <div class="label">Languages</div>
+          <p class="muted small">Hindi · Bengali · English</p>
+        </div>
+
+        <div class="section">
+          <div class="label">Quick Links</div>
+          <p class="muted small">LinkedIn: https://www.linkedin.com/in/sudip-ghosh-b256a916a<a href="#">@sudip_the_creator</a></p>
+        </div>
+      </aside>
     </div>
+  </div>
 
-    <div class="section">
-        <strong>3. Neyah Wellness</strong><br>
-        <em>MIS Executive | 2024 – Present</em>
-        <ul>
-            <li>Daily MIS reporting & dashboard maintenance</li>
-            <li>Sales & collection analysis</li>
-            <li>Google Sheets & Excel automation</li>
-            <li>Coordination with field team & management</li>
-        </ul>
-    </div>
+<script>
+  // Download TXT
+  document.getElementById('downloadTxt').addEventListener('click', function(){
+    const text = `SUDIP GHOSH
 
-    <h2>Skills</h2>
-    <ul>
-        <li>MIS Reporting & Analysis</li>
-        <li>Excel (Advanced) – VLOOKUP, Pivot Table, Dashboard</li>
-        <li>Google Sheets Automation</li>
-        <li>Tally ERP</li>
-        <li>Cash Handling & Billing Operations</li>
-        <li>Team Coordination & Communication</li>
-    </ul>
+Address: H.N Colony, Barmasia, Dhanbad, Jharkhand – 826001
+Date of Birth: 13-07-1994
+Marital Status: Married
+Father's Name: Bivash Ghosh
 
-    <h2>Declaration</h2>
-    <p>
-        I hereby declare that all the information provided above is true and correct to the best of my knowledge.
-    </p>
+CAREER OBJECTIVE
+Hardworking and dedicated professional with strong experience in MIS, Accounts, Cash Management, and Team Coordination.
 
-    <p><strong>Place:</strong> Dhanbad<br>
-    <strong>Date:</strong> ________</p>
+WORK EXPERIENCE
+- Neyah Wellness — MIS Executive (2024–Present)
+- Shankar Mall — Department Incharge / Accounts Executive / Cashier (2015–2024)
+- Bridge & Roof Company — Site Supervisor (2012–2014)
 
-</div>
+SKILLS
+MIS Reporting; Excel (VLOOKUP, Pivot, Dashboard); Google Sheets Automation; Tally ERP; Billing & Cash Handling
+
+EDUCATION
+Matric (10th) – Pranjivan Academy (2010); Intermediate (12th) – RSP College (2012); Tally Certification (2012)
+
+Declaration: I hereby declare that the above information is true to the best of my knowledge.`;
+    const blob = new Blob([text], {type:'text/plain'});
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a'); a.href = url; a.download = 'Sudip_Ghosh_CV.txt'; document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url);
+  });
+
+  // Print -> user can Save as PDF
+  document.getElementById('printPdf').addEventListener('click', function(){
+    window.print();
+  });
+</script>
 
 </body>
 </html>
