@@ -8,221 +8,158 @@
   :root{--blue:#0a66c2;--muted:#556;--card:#fff}
   *{box-sizing:border-box}
   body{margin:0;font-family:Inter, Arial, sans-serif;background:#f3f2ef;color:#222}
-  .resume-container{width:210mm;max-width:210mm;margin:0 auto;background:var(--card);border-radius:0;overflow:hidden;box-shadow:none}
-  .header{background:linear-gradient(135deg,#0a66c2,#004a99,#0d89e3);color:#fff;padding:20px;width:100%;margin:0;border-radius:0;box-sizing:border-box;}}}}
-  .download-btn{background:#fff;border:none;padding:8px 12px;border-radius:8px;cursor:pointer;display:inline-flex;align-items:center;gap:6px;margin-left:16px}
-  .download-btn svg{color:var(--blue)}
-  .download-btn span{color:var(--blue)}
-  .header-row{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
-  .print-note{display:none}
-  .title{flex:1}
-  h1{margin:0;font-size:28px;letter-spacing:0.4px}
-  .sub{margin-top:6px;font-size:15px;opacity:0.95}
-  .content{display:grid;grid-template-columns:1fr 280px;gap:18px;padding:18px;}}}
+  .resume-container{max-width:900px;margin:0 auto;background:var(--card);border-radius:10px;overflow:hidden;box-shadow:0 6px 30px rgba(0,0,0,0.08)}
+
+  /* FULL BLUE HEADER */
+  .header{background:linear-gradient(135deg,#0a66c2,#004a99,#0d89e3);color:#fff;padding:26px;width:100%;margin:0;border-radius:0;box-sizing:border-box;}
+
+  .header-row{display:flex;flex-direction:column;align-items:flex-start;gap:10px;}
+  h1{margin:0;font-size:30px;font-weight:800;color:#fff}
+  .sub{margin-top:4px;font-size:15px;color:#e8ecf5;font-weight:500}
+
+  /* CONTACT ICONS */
+  .contact-line{display:flex;flex-wrap:wrap;gap:18px;margin-top:4px;font-size:14px;color:#f7f9fc;align-items:center;}
+
+  .content{display:grid;grid-template-columns:1fr 320px;gap:24px;padding:26px}
   .section{margin-bottom:10px}
   h2{color:var(--blue);margin:0 0 10px 0;font-size:18px}
   p,li{font-size:15px;line-height:1.6;color:#222}
   ul{padding-left:18px;margin:6px 0}
+
   .sidebar{background:#fbfdff;padding:16px;border-radius:8px;border:1px solid #eef3f8}
   .muted{color:var(--muted);font-size:14px}
   .label{font-weight:700;color:#333}
   .small{font-size:14px;color:var(--muted)}
 
-  /* small screens - mobile friendly */
-  @media (max-width:880px){
+  /* MOBILE VIEW */
+  @media(max-width:880px){
+    .content{grid-template-columns:1fr;padding:18px}
     .resume-container{margin:12px}
-    .header{padding:16px}
-    .header-row{align-items:center}
-    .title{flex:1 1 100%}
-    h1{font-size:20px}
-    .sub{font-size:13px}
-    .download-btn{margin-left:0;margin-top:8px}
-    .content{grid-template-columns:1fr;gap:16px;padding:18px}
-    main{order:1}
-    .sidebar{order:2}
-    .sidebar{padding:14px}
-    .download-btn{margin-left:auto}
-    .download-btn{flex-shrink:0}
-    .download-btn span{font-weight:700}
+    h1{font-size:22px}
   }
 
-  /* A4 Printable Layout */
+  /* PRINT A4 */
   @media print{
-    @page { size: A4; margin: 8mm; }
-    body{background:#fff !important;}
-    .resume-container{width:100%;max-width:100%;margin:0;padding:0;box-shadow:none;border-radius:0;}
-    .header{padding:14px;margin:0;width:100%;}
-    .content{grid-template-columns:1fr 260px;gap:8px;padding:10px;}
-    .download-btn{display:none !important}
-    .print-note{display:block !important;color:#222;font-size:12px;margin-top:4px}
-  }    body{background:#fff !important;}
-    .resume-container{width:100%;max-width:100%;margin:0;padding:0;box-shadow:none;border-radius:0;}
-    .header{padding:14px;margin:0;width:100%;}
-    .content{grid-template-columns:1fr 260px;gap:8px;padding:10px;}
-    .download-btn{display:none !important}
-    .print-note{display:block !important;color:#222;font-size:12px;margin-top:4px}
-  }
-    body{background:#fff !important;}
-    .resume-container{width:100%;max-width:100%;margin:0;padding:0;box-shadow:none;border-radius:0;}
-    .content{grid-template-columns:1fr 300px;gap:10px;padding:10px;}
-    .header{padding:14px;}
-    .download-btn{display:none !important}
-    .print-note{display:block !important;color:#222}
+    @page{size:A4;margin:8mm}
+    body{background:#fff!important}
+    .resume-container{width:100%;max-width:100%;margin:0;padding:0;box-shadow:none;border-radius:0}
+    .content{grid-template-columns:1fr 260px;gap:10px;padding:10px}
+    .header{padding:14px;margin:0;width:100%}
   }
 </style>
 </head>
 <body>
-  <div class="resume-container">
-    <div class="header">
-      <div class="header-row" style="flex-direction:column;align-items:flex-start;gap:10px;">
 
-  <h1 style="margin:0;font-size:30px;font-weight:800;letter-spacing:0.5px;color:#fff">SUDIP GHOSH</h1>
+<div class="resume-container">
 
-  <div style="font-size:15px;color:#e8ecf5;font-weight:500;">
-    MIS Executive | Data Reporting | Excel Automation
-  </div>
+  <!-- BLUE HEADER -->
+  <div class="header">
+    <div class="header-row">
 
-  <div style="display:flex;flex-wrap:wrap;gap:18px;margin-top:4px;font-size:14px;color:#f7f9fc;align-items:center;">
+      <!-- DOWNLOAD PDF BUTTON -->
+      <button onclick="window.print()" style="background:#fff;color:var(--blue);padding:8px 14px;border-radius:8px;border:none;font-weight:700;cursor:pointer;align-self:flex-end;margin-bottom:10px;">
+        📄 Download PDF
+      </button>
 
-    <span style="display:flex;align-items:center;gap:6px;">
-      <svg width="22" height="22" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 6-9 13-9 13S3 16 3 10a9 9 0 1 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-      Dhanbad, Jharkhand
-    </span>
+      <h1>SUDIP GHOSH</h1>
+      <div class="sub">MIS Executive • Data Reporting • Excel Automation</div>
 
-    <span style="display:flex;align-items:center;gap:6px;">
-      <svg width="22" height="22" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92V21a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 3 5.18 2 2 0 0 1 5 3h4.09a1 1 0 0 1 1 .75 12.84 12.84 0 0 0 .57 1.81 1 1 0 0 1-.24 1.11L9 8a16 16 0 0 0 7 7l1.33-1.42a1 1 0 0 1 1.11-.24 12.84 12.84 0 0 0 1.81.57 1 1 0 0 1 .75 1V16.92z"/></svg>
-      8873018343
-    </span>
-
-    <span style="display:flex;align-items:center;gap:6px;">
-      <svg width="22" height="22" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><polyline points="22,6 12,13 2,6"/></svg>
-      sudip.ghosh8797@gmail.com
-    </span>
-
-</div>
-
-</div>
-</div>
-
-        <button id="downloadBtn" class="download-btn" title="Download PDF (Save as PDF)">
-          <!-- PDF icon -->
-          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:middle;margin-right:8px"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-          <span style="vertical-align:middle;font-weight:700;color:var(--blue)">Download PDF</span>
-        </button>
-
-        <div id="printNote" class="print-note" style="display:none;margin-left:12px;color:#fff;font-weight:600;font-size:13px"></div>
+      <div class="contact-line">
+        <span>📍 Dhanbad, Jharkhand</span>
+        <span>📞 8873018343</span>
+        <span>✉️ sudip.ghosh8797@gmail.com</span>
       </div>
-    </div>
-      <div class="content">
-      <main>
-        <div class="section">
-          <h2>Career Objective</h2>
-          <p>Hardworking and dedicated professional with strong experience in MIS, Accounts, Cash Management, and Team Coordination. Seeking a responsible position where my skills can contribute to organizational growth.</p>
-        </div>
 
-        <div class="section">
-          <h2>Work Experience</h2>
-          <h3>Neyah Wellness — MIS Executive <span class="small muted">(2024–Present)</span></h3>
-          <ul>
-            <li>Daily MIS reporting and dashboard maintenance</li>
-            <li>Sales & collection data analysis</li>
-            <li>Excel/Google Sheets automation</li>
-            <li>Coordination with field team and management</li>
-          </ul>
-
-          <h3>Shankar Mall — Department Incharge / Accounts Executive / Cashier <span class="small muted">(2015–2024)</span></h3>
-          <ul>
-            <li>Handled department operations, cash & billing</li>
-            <li>Prepared daily sales and account reports</li>
-            <li>Inventory & staff coordination</li>
-          </ul>
-
-          <h3>Bridge & Roof Company (India) Ltd. — Site Supervisor <span class="small muted">(2012–2014)</span></h3>
-          <ul>
-            <li>Supervised site activities and manpower</li>
-            <li>Prepared daily progress reports and coordinated materials</li>
-          </ul>
-        </div>
-
-        <div class="section">
-          <h2>Skills</h2>
-          <ul>
-            <li>MIS Reporting & Analysis</li>
-            <li>Excel (VLOOKUP, Pivot, Dashboards)</li>
-            <li>Google Sheets Automation</li>
-            <li>Tally ERP & Billing</li>
-            <li>Cash Handling & Team Coordination</li>
-          </ul>
-        </div>
-
-        <div class="section">
-          <h2>Education</h2>
-          <ul>
-            <li>Matric (10th) – Pranjivan Academy, JAC Board (2010)</li>
-            <li>Intermediate (12th) – RSP College (2012)</li>
-            <li>Tally Certification – Chaya Computer, Jharkhand (2012)</li>
-          </ul>
-        </div>
-
-        <div class="section">
-          <h2>Hobbies</h2>
-          <ul>
-            <li>Making friends</li>
-            <li>Video editing</li>
-            <li>Listening to music</li>
-          </ul>
-        </div>
-
-        <div class="section" id="contact">
-          <h2>Declaration</h2>
-          <p>I hereby declare that the above information is true to the best of my knowledge.</p>
-          <p class="small">Place: Dhanbad &nbsp;&nbsp; Date: __________</p>
-        </div>
-      </main>
-
-      <aside class="sidebar">
-        <div class="section">
-          <div class="label">Personal Details</div>
-          <p class="muted small">Date of Birth: 13-07-1994<br>Marital Status: Married<br>Father's Name: Bivash Ghosh<br>Nationality: Indian</p>
-        </div>
-
-        <div class="section">
-          <div class="label">Contact</div>
-          <p class="muted small">📧 Email: <a href="mailto:sudip.ghosh8797@gmail.com">sudip.ghosh8797@gmail.com</a><br>📞 Phone: 8873018343</p>
-        </div>
-
-        <div class="section">
-          <div class="label">Languages</div>
-          <p class="muted small">Hindi · Bengali · English</p>
-        </div>
-
-        <div class="section">
-          <div class="label">Quick Links</div>
-          <a href="https://www.linkedin.com/in/sudip-ghosh-b256a916a" target="_blank" style="display:inline-block;margin-top:8px;background:#0a66c2;color:#fff;padding:8px 14px;border-radius:6px;font-size:14px;text-decoration:none;font-weight:600;">LinkedIn Profile</a>
-        </div>
-      </aside>
     </div>
   </div>
-<script>
-  (function(){
-    const btn = document.getElementById('downloadBtn');
-    const note = document.getElementById('printNote');
-    function setPrintNote(){
-      const d = new Date();
-      const day = d.getDate();
-      const month = d.toLocaleString('en-GB', { month: 'short' });
-      const year = d.getFullYear();
-      const formatted = `${day} ${month} ${year}`;
-      note.textContent = 'Saved as PDF on: ' + formatted;
-      const pd = document.getElementById('printDate');
-      if(pd) pd.textContent = formatted;
-    }
-    if(btn){
-      btn.addEventListener('click', function(){ setPrintNote(); window.print(); });
-    }
-    window.addEventListener('beforeprint', setPrintNote);
-    window.addEventListener('afterprint', function(){ /* optional cleanup */ });
-  })();
-</script>
+
+  <div class="content">
+    <main>
+      <div class="section">
+        <h2>Career Objective</h2>
+        <p>Hardworking and dedicated professional with strong experience in MIS, Accounts, Cash Management, and Team Coordination. Seeking a responsible position where my skills can contribute to organizational growth.</p>
+      </div>
+
+      <div class="section">
+        <h2>Work Experience</h2>
+
+        <h3>Neyah Wellness — MIS Executive <span class="small muted">(2024–Present)</span></h3>
+        <ul>
+          <li>Daily MIS reporting and dashboard maintenance</li>
+          <li>Sales & collection data analysis</li>
+          <li>Excel/Google Sheets automation</li>
+          <li>Coordination with field team and management</li>
+        </ul>
+
+        <h3>Shankar Mall — Department Incharge / Accounts Executive / Cashier <span class="small muted">(2015–2024)</span></h3>
+        <ul>
+          <li>Handled department operations, cash & billing</li>
+          <li>Prepared daily sales and account reports</li>
+          <li>Inventory & staff coordination</li>
+        </ul>
+
+        <h3>Bridge & Roof Company (India) Ltd. — Site Supervisor <span class="small muted">(2012–2014)</span></h3>
+        <ul>
+          <li>Supervised site activities and manpower</li>
+          <li>Prepared daily progress reports and coordinated materials</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Skills</h2>
+        <ul>
+          <li>MIS Reporting & Analysis</li>
+          <li>Excel (VLOOKUP, Pivot, Dashboards)</li>
+          <li>Google Sheets Automation</li>
+          <li>Tally ERP & Billing</li>
+          <li>Cash Handling & Team Coordination</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Education</h2>
+        <ul>
+          <li>Matric (10th) – Pranjivan Academy, JAC Board (2010)</li>
+          <li>Intermediate (12th) – RSP College (2012)</li>
+          <li>Tally Certification – Chaya Computer (2012)</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Hobbies</h2>
+        <ul>
+          <li>Making friends</li>
+          <li>Video editing</li>
+          <li>Listening to music</li>
+        </ul>
+      </div>
+
+      <div class="section" id="contact">
+        <h2>Declaration</h2>
+        <p>I hereby declare that the above information is true to the best of my knowledge.</p>
+        <p class="small">Place: Dhanbad &nbsp;&nbsp; Date: __________</p>
+      </div>
+    </main>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="section">
+        <div class="label">Personal Details</div>
+        <p class="muted small">Date of Birth: 13-07-1994<br>Marital Status: Married<br>Father's Name: Bivash Ghosh<br>Nationality: Indian</p>
+      </div>
+
+      <div class="section">
+        <div class="label">Contact</div>
+        <p class="muted small">📧 Email: sudip.ghosh8797@gmail.com<br>📞 Phone: 8873018343</p>
+      </div>
+
+      <div class="section">
+        <div class="label">Languages</div>
+        <p class="muted small">Hindi · Bengali · English</p>
+      </div>
+    </aside>
+  </div>
+</div>
+
 </body>
 </html>
