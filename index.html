@@ -8,8 +8,8 @@
   :root{--blue:#0a66c2;--muted:#556;--card:#fff}
   *{box-sizing:border-box}
   body{margin:0;font-family:Inter, Arial, sans-serif;background:#f3f2ef;color:#222}
-  .resume-container{width:100%;max-width:100%;margin:0;background:var(--card);border-radius:0;overflow:hidden;box-shadow:none}
-  .header{background:linear-gradient(135deg,#0a66c2,#004a99,#0d89e3);color:#fff;padding:26px;width:100vw;margin-left:calc(50% - 50vw);}
+  .resume-container{width:210mm;max-width:210mm;margin:0 auto;background:var(--card);border-radius:0;overflow:hidden;box-shadow:none}
+  .header{background:linear-gradient(135deg,#0a66c2,#004a99,#0d89e3);color:#fff;padding:20px;width:100%;margin:0;border-radius:0;box-sizing:border-box;}}}}
   .download-btn{background:#fff;border:none;padding:8px 12px;border-radius:8px;cursor:pointer;display:inline-flex;align-items:center;gap:6px;margin-left:16px}
   .download-btn svg{color:var(--blue)}
   .download-btn span{color:var(--blue)}
@@ -18,7 +18,7 @@
   .title{flex:1}
   h1{margin:0;font-size:28px;letter-spacing:0.4px}
   .sub{margin-top:6px;font-size:15px;opacity:0.95}
-  .content{display:grid;grid-template-columns:1fr 320px;gap:24px;padding:26px}
+  .content{display:grid;grid-template-columns:1fr 280px;gap:18px;padding:18px;}}}
   .section{margin-bottom:10px}
   h2{color:var(--blue);margin:0 0 10px 0;font-size:18px}
   p,li{font-size:15px;line-height:1.6;color:#222}
@@ -48,7 +48,20 @@
 
   /* A4 Printable Layout */
   @media print{
-    @page { size: A4; margin: 10mm; }
+    @page { size: A4; margin: 8mm; }
+    body{background:#fff !important;}
+    .resume-container{width:100%;max-width:100%;margin:0;padding:0;box-shadow:none;border-radius:0;}
+    .header{padding:14px;margin:0;width:100%;}
+    .content{grid-template-columns:1fr 260px;gap:8px;padding:10px;}
+    .download-btn{display:none !important}
+    .print-note{display:block !important;color:#222;font-size:12px;margin-top:4px}
+  }    body{background:#fff !important;}
+    .resume-container{width:100%;max-width:100%;margin:0;padding:0;box-shadow:none;border-radius:0;}
+    .header{padding:14px;margin:0;width:100%;}
+    .content{grid-template-columns:1fr 260px;gap:8px;padding:10px;}
+    .download-btn{display:none !important}
+    .print-note{display:block !important;color:#222;font-size:12px;margin-top:4px}
+  }
     body{background:#fff !important;}
     .resume-container{width:100%;max-width:100%;margin:0;padding:0;box-shadow:none;border-radius:0;}
     .content{grid-template-columns:1fr 300px;gap:10px;padding:10px;}
